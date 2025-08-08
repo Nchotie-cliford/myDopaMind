@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myDopaMind – Small Joys. Big Change.</title>
+    <meta
+      name="description"
+      content="DopaMind is the AI-powered dopamine menu app that replaces doomscrolling with small, personalized habits. Join the waitlist."
+    />
+    <meta property="og:title" content="DopaMind – Small Joys. Big Change." />
+    <meta
+      property="og:description"
+      content="Replace doomscrolling with daily joys. Join the DopaMind waitlist."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --mint: #aee1c9;
+        --yellow: #ffe799;
+        --lav: #e8dff5;
+        --coral: #ff8b7b;
+        --ink: #0f172a;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--ink);
+      }
+      .glass {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Cookies Consent Popup -->
+    <div
+      id="cookies-popup"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        padding: 1.5rem;
+        max-width: 350px;
+        text-align: left;
+      "
+    >
+      <div style="font-size: 1rem; color: #334155; margin-bottom: 0.75rem">
+        We use cookies to improve your experience. By using myDopaMind, you agree
+        to our
+        <a href="#privacy" style="text-decoration: underline; color: #ff8b7b"
+          >Privacy Policy</a
+        >.
+      </div>
+      <button
+        id="accept-cookies"
+        style="
+          background: #ff8b7b;
+          color: white;
+          font-weight: 600;
+          border: none;
+          border-radius: 0.75rem;
+          padding: 0.5rem 1.25rem;
+          cursor: pointer;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+        "
+      >
+        Accept
+      </button>
+    </div>
+    <!-- Top bar -->
+    <header
+      class="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a href="#" class="flex items-center gap-2 font-extrabold text-xl">
+          <span class="inline-block h-8 w-8 rounded-xl bg-[var(--mint)]"></span>
+          myDopaMind
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#features" class="hover:text-slate-900 text-slate-600"
+            >Features</a
+          >
+          <a href="#how" class="hover:text-slate-900 text-slate-600"
+            >How it works</a
+          >
+          <a href="#social-proof" class="hover:text-slate-900 text-slate-600"
+            >Why now</a
+          >
+          <a href="#faq" class="hover:text-slate-900 text-slate-600">FAQ</a>
+          <a
+            href="#waitlist"
+            class="px-4 py-2 rounded-xl bg-[var(--coral)] text-white shadow hover:opacity-90"
+            >Join Waitlist</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="relative pt-28 md:pt-36 pb-16 md:pb-24 bg-gradient-to-b from-[var(--lav)]/50 to-white"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Small Joys. <span class="text-[var(--coral)]">Big Change.</span>
+          </h1>
+          <p class="mt-5 text-lg text-slate-700">
+            myDopaMind replaces doomscrolling with your personalized
+            <strong>dopamine menu</strong> — tiny, meaningful actions that lift
+            your mood. Built for European lifestyles. Backed by behavioral
+            science.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#waitlist"
+              class="px-6 py-3 rounded-xl bg-[var(--coral)] text-white font-semibold shadow hover:opacity-90"
+              >Join the Waitlist</a
+            >
+            <a
+              href="#challenge"
+              class="px-6 py-3 rounded-xl bg-white border border-slate-200 font-semibold hover:bg-slate-50"
+              >Try a 7‑Day Challenge</a
+            >
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2">
+              <span
+                class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--mint)]"
+              ></span>
+              Digital detox
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--yellow)]"
+              ></span>
+              Mood tracking
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--lav)]"
+              ></span>
+              Community
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200"
+          >
+            <img
+              src="access/img/t67.jpg"
+              alt="Calm wellness moment"
+              class="w-full h-[420px] object-cover"
+            />
+          </div>
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 max-w-xs"
+          >
+            <p class="text-xs uppercase tracking-wide text-slate-500">
+              Today’s Dopamine Menu
+            </p>
+            <ul class="mt-2 space-y-1 text-sm">
+              <li>☀️ 5‑min sunlight break</li>
+              <li>🤝 Text a friend thank‑you</li>
+              <li>🫖 Brew mint tea</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof / counters -->
+    <section id="social-proof" class="py-10">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+      >
+        <div class="p-6 rounded-2xl bg-white border border-slate-200">
+          <p class="text-3xl font-extrabold">7‑day</p>
+          <p class="text-slate-600">challenge starter</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200">
+          <p class="text-3xl font-extrabold">3×</p>
+          <p class="text-slate-600">more likely to act</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200">
+          <p class="text-3xl font-extrabold">90s</p>
+          <p class="text-slate-600">setup time</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200">
+          <p class="text-3xl font-extrabold">EU‑ready</p>
+          <p class="text-slate-600">privacy first</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section
+      id="features"
+      class="py-14 md:py-20 bg-gradient-to-b from-white to-[var(--mint)]/15"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center">
+          Why people love DopaMind
+        </h2>
+        <p class="text-center mt-3 text-slate-600">
+          Personalized micro‑habits, detox challenges, and a community that
+          keeps you going.
+        </p>
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-xl font-bold">AI Menu Builder</div>
+            <p class="mt-2 text-slate-600">
+              Custom dopamine menus tuned to your mood, time, weather, and
+              culture.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-xl font-bold">Digital Detox</div>
+            <p class="mt-2 text-slate-600">
+              Screen‑free challenges with streaks, leaderboards, and rewards.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-xl font-bold">Community</div>
+            <p class="mt-2 text-slate-600">
+              Local meetups and themed weeks — wellness that’s social, not
+              solitary.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-xl font-bold">Progress, Visualized</div>
+            <p class="mt-2 text-slate-600">
+              Shareable charts for mood boosts and screen‑time wins.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-center">How it works</h2>
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-sm font-bold text-slate-500">Step 1</div>
+            <div class="text-xl font-bold">Take the 90‑second quiz</div>
+            <p class="mt-2 text-slate-600">
+              Tell us your vibe, time, and goals.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-sm font-bold text-slate-500">Step 2</div>
+            <div class="text-xl font-bold">Get your dopamine menu</div>
+            <p class="mt-2 text-slate-600">
+              Instant list of tiny actions that work for you.
+            </p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+            <div class="text-sm font-bold text-slate-500">Step 3</div>
+            <div class="text-xl font-bold">Join a challenge</div>
+            <p class="mt-2 text-slate-600">
+              Replace scrolling with joyful habits — together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenge CTA -->
+    <section id="challenge" class="py-16 bg-[var(--lav)]/30">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl md:text-3xl font-extrabold">
+          The 7‑Day Digital Detox Starter
+        </h3>
+        <p class="mt-2 text-slate-700">
+          One joyful activity a day. 10 minutes. Noticeable difference.
+        </p>
+        <a
+          href="#waitlist"
+          class="inline-block mt-6 px-6 py-3 rounded-xl bg-[var(--coral)] text-white font-semibold shadow hover:opacity-90"
+          >Get the free starter kit</a
+        >
+      </div>
+    </section>
+
+    <!-- Waitlist / Lead form -->
+    <section id="waitlist" class="py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="p-8 md:p-10 rounded-3xl glass border border-slate-200 shadow-lg"
+        >
+          <h3 class="text-2xl md:text-3xl font-extrabold">Join the waitlist</h3>
+          <p class="mt-2 text-slate-700">
+            Be first to try myDopaMind + get the 7‑Day Detox Starter as a PDF.
+          </p>
+          <form id="waitlist-form" class="mt-6 grid md:grid-cols-2 gap-4">
+            <div class="md:col-span-1">
+              <label class="block text-sm font-medium text-slate-700"
+                >First name</label
+              >
+              <input
+                required
+                type="text"
+                name="firstName"
+                class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+              />
+            </div>
+            <div class="md:col-span-1">
+              <label class="block text-sm font-medium text-slate-700"
+                >Email</label
+              >
+              <input
+                required
+                type="email"
+                name="email"
+                class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--mint)]"
+              />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-slate-700"
+                >What’s your #1 goal?</label
+              >
+              <select
+                name="goal"
+                class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2"
+              >
+                <option>Reduce screen time</option>
+                <option>Lift my mood</option>
+                <option>Build better routines</option>
+                <option>Eat cleaner</option>
+                <option>Find community</option>
+              </select>
+            </div>
+            <div
+              class="md:col-span-2 flex items-start gap-3 text-sm text-slate-600"
+            >
+              <input id="consent" type="checkbox" class="mt-1" required />
+              <label for="consent"
+                >I agree to receive early access emails and the starter PDF. We
+                respect GDPR.
+                <a class="underline" href="#privacy">Privacy</a></label
+              >
+            </div>
+            <div class="md:col-span-2 flex gap-3">
+              <button
+                class="px-6 py-3 rounded-xl bg-[var(--coral)] text-white font-semibold shadow hover:opacity-90"
+                type="submit"
+              >
+                Join Waitlist
+              </button>
+              <p
+                id="form-status"
+                class="text-sm text-slate-600 self-center"
+              ></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      id="faq"
+      class="py-16 bg-gradient-to-b from-white to-[var(--yellow)]/20"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-3xl font-extrabold text-center">FAQ</h3>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <details
+            class="p-6 bg-white border border-slate-200 rounded-2xl group"
+          >
+            <summary class="cursor-pointer font-semibold">
+              What is a dopamine menu?
+            </summary>
+            <p class="mt-2 text-slate-700">
+              A personalized list of tiny, mood‑boosting actions you can do
+              quickly — like a menu for your mind.
+            </p>
+          </details>
+          <details
+            class="p-6 bg-white border border-slate-200 rounded-2xl group"
+          >
+            <summary class="cursor-pointer font-semibold">
+              Is DopaMind a therapy app?
+            </summary>
+            <p class="mt-2 text-slate-700">
+              No. It’s a habit and community tool. It can complement therapy but
+              doesn’t replace professional care.
+            </p>
+          </details>
+          <details
+            class="p-6 bg-white border border-slate-200 rounded-2xl group"
+          >
+            <summary class="cursor-pointer font-semibold">
+              How do challenges work?
+            </summary>
+            <p class="mt-2 text-slate-700">
+              Pick a themed week, complete one micro‑habit daily, earn streaks,
+              and share progress. Simple and fun.
+            </p>
+          </details>
+          <details
+            class="p-6 bg-white border border-slate-200 rounded-2xl group"
+          >
+            <summary class="cursor-pointer font-semibold">
+              Will you sell my data?
+            </summary>
+            <p class="mt-2 text-slate-700">
+              No. We’re privacy‑first and GDPR‑compliant. You control your data
+              and can delete it anytime.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200" id="privacy">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-6"
+      >
+        <div>
+          <div class="font-extrabold text-xl flex items-center gap-2">
+            <span
+              class="inline-block h-6 w-6 rounded-lg bg-[var(--mint)]"
+            ></span>
+            myDopaMind
+          </div>
+          <p class="mt-2 text-slate-600 max-w-md">
+            Built in Europe. Privacy‑first. If you’re in crisis, please contact
+            local emergency services or a qualified professional.
+          </p>
+        </div>
+        <div class="text-sm text-slate-600">
+          <div class="font-semibold">Contact</div>
+          <a class="block hover:underline" href="mailto:hello@dopamind.app"
+            >hello@dopamind.app</a
+          >
+          <a class="block hover:underline" href="#">Imprint</a>
+          <a class="block hover:underline" href="#">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Simple form handler (replace endpoint) -->
+    <script>
+      // Cookies popup logic (runs immediately)
+      (function () {
+        function showCookiesPopup() {
+          var cookiesPopup = document.getElementById("cookies-popup");
+          var acceptCookiesBtn = document.getElementById("accept-cookies");
+          if (!cookiesPopup || !acceptCookiesBtn) return;
+          if (localStorage.getItem("cookiesAccepted") !== "true") {
+            cookiesPopup.style.display = "block";
+          }
+          acceptCookiesBtn.onclick = function () {
+            localStorage.setItem("cookiesAccepted", "true");
+            cookiesPopup.style.display = "none";
+          };
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", showCookiesPopup);
+        } else {
+          showCookiesPopup();
+        }
+      })();
+
+      // Waitlist form logic
+      const form = document.getElementById("waitlist-form");
+      const statusEl = document.getElementById("form-status");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "Sending…";
+        // TODO: Replace with your endpoint (Formspree, Beehiiv, Mailchimp, Supabase, etc.)
+        const endpoint = "https://formspree.io/f/your-id";
+        const data = Object.fromEntries(new FormData(form));
+        try {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          if (!res.ok) throw new Error("Request failed");
+          form.reset();
+          statusEl.textContent =
+            "Thanks! Check your inbox for the starter kit.";
+        } catch (err) {
+          console.error(err);
+          statusEl.textContent =
+            "Hmm, something went wrong. Email us at hello@dopamind.app";
+        }
+      });
+    </script>
+  </body>
+</html>
